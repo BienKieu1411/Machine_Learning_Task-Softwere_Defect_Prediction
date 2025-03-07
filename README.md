@@ -26,12 +26,11 @@
 Software_Defect_Prediction/
 │── dataNASA/           # NASA defect datasets
 │── dataPROMISE/        # PROMISE defect datasets
-│── notebooks/          # Jupyter Notebooks for data analysis and model training
-│── models/             # Trained ML models
-│── results/            # Prediction results and evaluation reports
+│── Software_Defect/    # Jupyter Notebooks for data analysis and model training
+│── dataPROMISE_results/# Prediction results and evaluation reports
+│── dataNASA_results/   # Prediction results and evaluation reports
 │── README.md           # Project documentation
 │── requirements.txt    # Dependencies
-│── main.py             # Main script to run the predictions
 ```
 
 ## ⚙️ Installation & Setup
@@ -44,14 +43,8 @@ pip install -r requirements.txt
 ```
 
 ### 2️⃣ Run Software Defect Prediction
-- Use the following command to execute the main script:
 
-```sh
-python main.py
-```
-
-### 3️⃣ Data Analysis & Visualization
-- For detailed analysis and visualization, open the Jupyter Notebook:
+- Open the Jupyter Notebook to start the analysis:
 
 ```sh
 jupyter notebook
@@ -60,18 +53,35 @@ jupyter notebook
 ## 📊 Machine Learning Models
 - The project explores different supervised learning models to predict software defects:
 
-  - ✅ Random Forest 🌳
-  - ✅ Support Vector Machine (SVM) 📈
-  - ✅ Neural Networks (MLP, LSTM) 🤖
-  - ✅ Gradient Boosting (XGBoost, LightGBM, CatBoost) 🚀
+- Ensemble Learning Approach: The models are combined using stacking to enhance prediction performance.
+
 - Each model is evaluated based on:
 
   - Accuracy 🎯
+
   - Precision & Recall 📊
+
   - F1-score ⚖️
-  - ROC-AUC Score 📈
-  - 🔬 Results & Insights
-- Our experiments show that ensemble methods (Random Forest, XGBoost) and deep learning models (MLP, LSTM) perform well on defect prediction tasks. The results are saved in the results/ folder for further analysis.
+
+- Experimental Approach:
+
+  - Preprocessing
+
+  - Cross-validation training:
+
+    - For dataPROMISE: Use cross-project training for single-version projects and train on previous versions for multi-version projects.
+
+    - For dataNASA: Use cross-validation for all files.
+
+  - Techniques applied:
+
+    - Sampling
+
+    - Weighted Learning
+
+    - Feature Selection
+
+- Model evaluation by combining different techniques and analyzing their impact on performance.
 
 ## 📌 Future Improvements
 - 🏗 Feature Engineering: Improve feature extraction for better defect prediction.
